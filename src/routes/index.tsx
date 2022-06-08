@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { LayoutDefault } from '../layouts';
-import { Following, Home, Profile } from '../pages';
+import { LayoutDefault } from 'layouts';
+import { Following, Home, Profile } from 'pages';
 import { privateRoutes } from './routes';
 
 function CreateRoute() {
@@ -17,6 +17,7 @@ function CreateRoute() {
 
                     return (
                         <Route
+                            key={idx}
                             path={route.path}
                             element={
                                 <Layout>

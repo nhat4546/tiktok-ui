@@ -1,11 +1,8 @@
-import React from 'react';
-import { Header } from './components';
-import CreateRoute from './routes';
-
+import React, { useState } from 'react';
 function App() {
     return (
         <div className="App">
-            <CreateRoute />
+            
         </div>
     );
 }

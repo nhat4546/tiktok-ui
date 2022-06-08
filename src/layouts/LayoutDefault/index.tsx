@@ -1,8 +1,6 @@
 import classNames from 'classnames';
-import { Header, Sitebar } from '../../components';
+import { Header, Sitebar } from 'components';
 import styles from './index.module.scss';
-
-const cx = classNames.bind(styles);
 
 type Props = {
     children: JSX.Element;

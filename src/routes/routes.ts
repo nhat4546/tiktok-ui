@@ -1,5 +1,5 @@
-import { LayoutDefault } from '../layouts';
-import { Home, Profile } from '../pages';
+import { LayoutDefault } from 'layouts';
+import { Home, Profile } from 'pages';
 
 export const privateRoutes = [
     { path: '/', page: Home, layout: LayoutDefault },

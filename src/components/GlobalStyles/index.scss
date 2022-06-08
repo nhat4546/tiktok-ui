@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
 
 :root {
+    --primary-color: #fe2c55;
+    --black-color: #333;
+    --white-color: #fff;
 }
 
 * {
@@ -28,6 +31,13 @@ ul {
     list-style: none;
 }
 
+button,
+input {
+    outline: none;
+    border: none;
+    background: none;
+}
+
 .d-flex {
     display: flex;
 }
@@ -36,8 +46,8 @@ ul {
     justify-content: center;
 }
 
-.justify-center {
-    justify-content: center;
+.justify-space-bettween {
+    justify-content: space-between;
 }
 
 .align-center {
