@@ -27,7 +27,7 @@ import { Tooltip } from "@mui/material";
 
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const wrapInputRef = useRef<any>(null);
   const inputRef = useRef<any>(null);
 
@@ -69,6 +69,7 @@ function Header() {
                 type="text"
                 className={styles["form-input"]}
                 ref={inputRef}
+                placeholder="Tìm kiếm tài khoản và video"
               />
               <div className={styles["wrap-btn"]}>
                 <img
@@ -101,7 +102,7 @@ function Header() {
 
           {!isLogin ? (
             <>
-              <Button classnames={styles["btn-login"]} primary>
+              <Button classnames={styles["btn-login"]} primary={1}>
                 <span>Đăng nhập</span>
               </Button>
               <div className={styles["wrap-btn-settings"]}>
@@ -129,6 +130,7 @@ function Header() {
               <div className={styles["btn-settings-not-login"]}>
                 <div className={styles["btn-settings"]}>
                   <Tooltip
+                    arrow
                     title={<p style={{ fontSize: 16 }}>Tin nhắn</p>}
                     placement="bottom"
                   >
@@ -141,6 +143,7 @@ function Header() {
                 </div>
                 <div className={styles["btn-settings"]}>
                   <Tooltip
+                    arrow
                     title={<p style={{ fontSize: 16 }}>Hộp thư</p>}
                     placement="bottom"
                   >

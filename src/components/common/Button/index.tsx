@@ -36,7 +36,7 @@ interface ButtonProps {
   href?: string;
   onClick?: (prams: any) => void;
   children: JSX.Element;
-  primary?: boolean;
-  outline?: boolean;
+  primary?: 1 | 0;
+  outline?: 1 | 0;
   classnames?: string;
 }

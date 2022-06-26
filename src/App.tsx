@@ -14,14 +14,6 @@ function App() {
           })}
         </Routes>
       </BrowserRouter>
-      <Button
-        onClick={() => {
-          alert("nidso");
-        }}
-        outline
-      >
-        <h1>button</h1>
-      </Button>
     </div>
   );
 }
