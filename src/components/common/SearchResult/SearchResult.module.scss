@@ -1,0 +1,83 @@
+@import "components/GlobalStyles/mixin.scss";
+@import "components/GlobalStyles/variables.scss";
+
+.wrap-search-result {
+  min-width: 360px;
+}
+
+.result-icon {
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+}
+
+.result-item {
+  @include d-flex(center, flex-start);
+  padding: 9px 16px;
+}
+
+.result-name {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-title-small {
+  height: 30px;
+  padding: 5px 12px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: $text-light;
+}
+
+.result-item-account {
+  @include d-flex(center, flex-start);
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+.item-avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+.item-account-info {
+  margin-left: 12px;
+}
+
+.info-top {
+  @include d-flex(center, flex-start);
+}
+
+.icon-verify {
+  margin-left: 4px;
+}
+
+.result-name-profile {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: $text-light;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.serach-result-bottom {
+  padding: 15px 16px;
+  cursor: pointer;
+}
+
+.result-bottom-text {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: $text-primary;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

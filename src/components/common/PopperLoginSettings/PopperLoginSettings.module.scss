@@ -1,0 +1,26 @@
+@import "components/GlobalStyles/mixin.scss";
+@import "components/GlobalStyles/variables.scss";
+
+.wrap-popper-settings {
+  width: 230px;
+}
+
+.settings-item {
+  @include d-flex(center, flex-start);
+  padding: 10px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+}
+.settings-item-icon {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+.settings-item-name {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
