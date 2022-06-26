@@ -20,13 +20,14 @@ import uploadIcon from "assets/icons/upload-icon.svg";
 import settingsIcon from "assets/icons/settings-icon.svg";
 import letterIcon from "assets/icons/header-letter-icon.svg";
 import messageIcon from "assets/icons/header-message-icon.svg";
+import closeIcon from "assets/icons/close-icon.svg";
 
 import styles from "./Header.module.scss";
 import { Tooltip } from "@mui/material";
 
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const wrapInputRef = useRef<any>(null);
   const inputRef = useRef<any>(null);
 
@@ -70,9 +71,11 @@ function Header() {
                 ref={inputRef}
               />
               <div className={styles["wrap-btn"]}>
-                <button className={styles["icon-close"]}>
-                  <FontAwesomeIcon icon={faCircleXmark} />
-                </button>
+                <img
+                  src={closeIcon}
+                  alt="icon"
+                  className={styles["icon-close"]}
+                />
                 {/* <button className={styles["icon-loading"]}>
                 <FontAwesomeIcon icon={faCircleXmark} />
               </button> */}
@@ -103,9 +106,8 @@ function Header() {
               </Button>
               <div className={styles["wrap-btn-settings"]}>
                 <Tippy
-                  visible
                   interactive
-                  offset={[-95, 10]}
+                  placement="bottom-end"
                   render={(attrs) => (
                     <Popper {...attrs} tabIndex={-1}>
                       <PopperNotLoginSettings />
