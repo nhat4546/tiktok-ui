@@ -50,3 +50,16 @@ h5 {
   height: 1px;
   background: rgba(22, 24, 35, 0.12);
 }
+
+@keyframes loading-icon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.global-loading-icon {
+  animation: loading-icon 0.75s infinite linear;
+}

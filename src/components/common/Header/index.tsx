@@ -18,6 +18,7 @@ import {
   MessageIcon,
   CloseIcon,
   SearchIcon,
+  LoadingIcon,
 } from "components/Icons";
 
 import logo from "assets/images/logo.png";
@@ -71,7 +72,8 @@ function Header() {
               />
               <div className={styles["wrap-btn"]}>
                 <button className={styles["btn-close"]}>
-                  <CloseIcon className={styles["icon-close"]} />
+                  {/* <CloseIcon className={styles["icon-close"]} /> */}
+                  <LoadingIcon className={styles["icon-loading"]} />
                 </button>
                 <span className={styles["span-spliter"]}></span>
                 <button className={styles["btn-search"]}>

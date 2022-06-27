@@ -1,4 +1,6 @@
 import React, { forwardRef } from "react";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const UploadIcon = ({ className }: any) => (
   <svg
@@ -283,6 +285,13 @@ const KeyboardIcon = ({ className }: any) => (
   </svg>
 );
 
+const LoadingIcon = ({ className }: any) => (
+  <FontAwesomeIcon
+    icon={faSpinner}
+    className={`global-loading-icon ${className}`}
+  />
+);
+
 export {
   UploadIcon,
   SettingsIcon,
@@ -300,4 +309,5 @@ export {
   LanguageIcon,
   ReportHelpIcon,
   KeyboardIcon,
+  LoadingIcon,
 };

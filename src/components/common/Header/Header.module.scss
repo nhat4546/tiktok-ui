@@ -28,6 +28,7 @@
 
 .form-search {
   position: relative;
+  height: 22px;
   @include d-flex(center, space-between);
 }
 
@@ -43,7 +44,8 @@
   caret-color: rgb(254, 44, 85);
 }
 
-.icon-close {
+.icon-close,
+.icon-loading {
   margin-right: 8px;
 }
 
