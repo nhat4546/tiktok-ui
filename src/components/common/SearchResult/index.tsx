@@ -1,33 +1,32 @@
 import React from "react";
 
+import { SearchResultIcon, VerifyIcon } from "components/Icons";
 import styles from "./SearchResult.module.scss";
-
-import searchIcon from "assets/icons/search-icon.svg";
-import verifyIcon from "assets/icons/verify-icon.svg";
+import { CustomAvatar } from "components/common";
 
 function SearchResult({ data }: SearchResultProps) {
   return (
     <div className={styles["wrap-search-result"]}>
       <div className={styles["result-item"]}>
-        <img src={searchIcon} alt="icon" className={styles["result-icon"]} />
+        <SearchResultIcon className={styles["result-icon"]} />
         <h4 className={styles["result-name"]}>Nhat Nguyen</h4>
       </div>
       <div className={styles["result-item"]}>
-        <img src={searchIcon} alt="icon" className={styles["result-icon"]} />
+        <SearchResultIcon className={styles["result-icon"]} />
         <h4 className={styles["result-name"]}>Nhat Nguyen</h4>
       </div>
       <div className={styles["result-item"]}>
-        <img src={searchIcon} alt="icon" className={styles["result-icon"]} />
+        <SearchResultIcon className={styles["result-icon"]} />
         <h4 className={styles["result-name"]}>Nhat Nguyen</h4>
       </div>
       <div className={styles["result-item"]}>
-        <img src={searchIcon} alt="icon" className={styles["result-icon"]} />
+        <SearchResultIcon className={styles["result-icon"]} />
         <h4 className={styles["result-name"]}>Nhat Nguyen</h4>
       </div>
       <div className={styles["account-title-small"]}>Tài khoản</div>
       <div className={styles["result-item-account"]}>
         <div className={styles["item-account-avatar"]}>
-          <img
+          <CustomAvatar
             src="https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/161684580_2590122681288472_5013727967317194644_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=rIvvjJOoUvoAX_tQoYm&_nc_ht=scontent.fhan14-2.fna&oh=00_AT8V8ES5jgzlPYu9doJtNYWHX4NnpW7faqFP7SkJdplbcQ&oe=62DE1ED0"
             alt=""
             className={styles["item-avatar-img"]}
@@ -37,7 +36,7 @@ function SearchResult({ data }: SearchResultProps) {
           <div className={styles["info-top"]}>
             <h4 className={styles["result-name"]}>nhatnv1420</h4>
             <span className={styles["icon-verify"]}>
-              <img src={verifyIcon} alt="icon" />
+              <VerifyIcon />
             </span>
           </div>
           <h4 className={styles["result-name-profile"]}>Nhat Nguyen</h4>
@@ -45,7 +44,7 @@ function SearchResult({ data }: SearchResultProps) {
       </div>
       <div className={styles["result-item-account"]}>
         <div className={styles["item-account-avatar"]}>
-          <img
+          <CustomAvatar
             src="https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/161684580_2590122681288472_5013727967317194644_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=rIvvjJOoUvoAX_tQoYm&_nc_ht=scontent.fhan14-2.fna&oh=00_AT8V8ES5jgzlPYu9doJtNYWHX4NnpW7faqFP7SkJdplbcQ&oe=62DE1ED0"
             alt=""
             className={styles["item-avatar-img"]}
@@ -55,7 +54,7 @@ function SearchResult({ data }: SearchResultProps) {
           <div className={styles["info-top"]}>
             <h4 className={styles["result-name"]}>nhatnv1420</h4>
             <span className={styles["icon-verify"]}>
-              <img src={verifyIcon} alt="icon" />
+              <VerifyIcon />
             </span>
           </div>
           <h4 className={styles["result-name-profile"]}>Nhat Nguyen</h4>

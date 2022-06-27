@@ -44,7 +44,6 @@
 }
 
 .icon-close {
-  padding: 4px;
   margin-right: 8px;
 }
 
@@ -74,6 +73,11 @@
   &:hover {
     background: rgba(22, 24, 35, 0.08);
   }
+}
+
+.btn-search-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .header-settings {
