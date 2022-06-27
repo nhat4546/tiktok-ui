@@ -2,48 +2,25 @@ import React, { useEffect, useRef, useState } from "react";
 import Tippy from "@tippyjs/react/headless";
 import { Tooltip } from "@mui/material";
 
-import {
-  Popper,
-  SearchResult,
-  Button,
-  PopperNotLoginSettings,
-  PopperLoginSettings,
-  CustomAvatar,
-} from "components/common";
+import { Popper, Button, CustomAvatar } from "components/common";
 
 import {
   UploadIcon,
   HeaderSettingsIcon,
   LetterIcon,
   MessageIcon,
-  CloseIcon,
-  SearchIcon,
-  LoadingIcon,
 } from "components/Icons";
 
 import logo from "assets/images/logo.png";
 import styles from "./Header.module.scss";
+import {
+  PopperLoginSettings,
+  PopperNotLoginSettings,
+  Search,
+} from "./components";
 
 function Header() {
-  const [searchResult, setSearchResult] = useState([]);
   const [isLogin, setIsLogin] = useState(true);
-  const wrapInputRef = useRef<any>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const handleClick = () => {
-      if (inputRef.current === document.activeElement) {
-        wrapInputRef.current.classList.add(styles.focused);
-      } else {
-        wrapInputRef.current.classList.remove(styles.focused);
-      }
-    };
-    window.addEventListener("click", handleClick);
-
-    return () => {
-      window.removeEventListener("click", handleClick);
-    };
-  }, []);
 
   return (
     <div className={styles.header}>
@@ -51,37 +28,8 @@ function Header() {
         <div className={styles["header-logo"]}>
           <img src={logo} alt="" />
         </div>
-        <div className={styles["header-wrap-search"]} ref={wrapInputRef}>
-          <Tippy
-            visible={searchResult.length > 0}
-            offset={[0, 16]}
-            interactive
-            placement="bottom-end"
-            render={(attrs) => (
-              <Popper {...attrs} tabIndex={-1}>
-                <SearchResult data={searchResult} />
-              </Popper>
-            )}
-          >
-            <div className={styles["form-search"]}>
-              <input
-                type="text"
-                className={styles["form-input"]}
-                ref={inputRef}
-                placeholder="Tìm kiếm tài khoản và video"
-              />
-              <div className={styles["wrap-btn"]}>
-                <button className={styles["btn-close"]}>
-                  {/* <CloseIcon className={styles["icon-close"]} /> */}
-                  <LoadingIcon className={styles["icon-loading"]} />
-                </button>
-                <span className={styles["span-spliter"]}></span>
-                <button className={styles["btn-search"]}>
-                  <SearchIcon className={styles["btn-search-icon"]} />
-                </button>
-              </div>
-            </div>
-          </Tippy>
+        <div className={styles["header-wrap-search"]}>
+          <Search />
         </div>
         <div className={styles["header-settings"]}>
           <Button classnames={styles["btn-upload"]}>
