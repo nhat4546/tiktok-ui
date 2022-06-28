@@ -8,7 +8,7 @@ import { UploadIcon, HeaderSettingsIcon, LetterIcon, MessageIcon } from "compone
 
 import logo from "assets/images/logo.png";
 import styles from "./Header.module.scss";
-import { PopperLoginSettings, PopperNotLoginSettings, Search } from "./components";
+import { NotLogin, PopperLoginSettings, PopperNotLoginSettings, Search } from "./components";
 
 function Header() {
     const [isLogin, setIsLogin] = useState(true);
@@ -45,6 +45,7 @@ function Header() {
                             </div>
                             <div className={styles["item-account-avatar"]}>
                                 <Tippy
+                                    hideOnClick={false}
                                     interactive
                                     placement="bottom-end"
                                     render={(attrs) => (
@@ -58,26 +59,7 @@ function Header() {
                             </div>
                         </>
                     ) : (
-                        <>
-                            <Button classnames={styles["btn-login"]} primary={1}>
-                                <span>Đăng nhập</span>
-                            </Button>
-                            <div className={styles["wrap-btn-settings"]}>
-                                <Tippy
-                                    interactive
-                                    placement="bottom-end"
-                                    render={(attrs) => (
-                                        <Popper {...attrs} tabIndex={-1}>
-                                            <PopperNotLoginSettings />
-                                        </Popper>
-                                    )}
-                                >
-                                    <div className={styles["btn-settings"]}>
-                                        <HeaderSettingsIcon className={styles["btn-settings-icon"]} />
-                                    </div>
-                                </Tippy>
-                            </div>
-                        </>
+                        <NotLogin />
                     )}
                 </div>
             </div>

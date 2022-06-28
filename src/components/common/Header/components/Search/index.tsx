@@ -28,14 +28,24 @@ function Search() {
     };
 
     const handleClickOutSide = () => {
-        wrapInputRef.current.classList.remove(styles.focused);
         setIsShowResult(false);
+    };
+
+    const handleBlurInput = () => {
+        wrapInputRef.current.classList.remove(styles.focused);
     };
 
     const handleClearInput = () => {
         inputRef.current?.focus();
         setValueInput("");
         setSearchResult([]);
+    };
+
+    const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const valueInput = e.target.value;
+        if (!valueInput.startsWith(" ")) {
+            setValueInput(e.currentTarget.value);
+        }
     };
 
     useEffect(() => {
@@ -47,10 +57,11 @@ function Search() {
     useEffect(() => {
         const searchData = async (value: any) => {
             setIsLoading(true);
-            const [result, error] = await searchService.search({
+            const params = {
                 q: value,
-                type: "less"
-            });
+                type: "less",
+            };
+            const [result, error] = await searchService.search(params);
 
             if (error) {
                 return;
@@ -92,10 +103,11 @@ function Search() {
                     <input
                         type="text"
                         className={styles["form-input"]}
-                        placeholder="Tìm kiếm tài khoản và video"
+                        placeholder="Tìm kiếm tài khoản và videos"
                         value={valueInput}
-                        onChange={(e) => setValueInput(e.currentTarget.value)}
+                        onChange={handleChangeInput}
                         onFocus={handleFocusInput}
+                        onBlur={handleBlurInput}
                         ref={inputRef}
                     />
                     <div className={styles["wrap-btn"]}>

@@ -2,35 +2,35 @@
 @import "components/GlobalStyles/variables.scss";
 
 .button-wrap {
-  @include d-flex();
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  min-width: 110px;
-  padding: 0 16px;
-  height: 36px;
-  border-radius: 4px;
-  cursor: pointer;
+    @include d-flex();
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    min-width: 110px;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: $font-family;
 
-  & + .button-wrap {
-    margin-left: 12px;
-  }
+    & + .button-wrap {
+        margin-left: 12px;
+    }
 }
 
 .primary {
-  color: $white-color;
-  background: $primary-color;
-  &:hover {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
-      #fe2c55;
-  }
+    color: $white-color;
+    background: $primary-color;
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+    }
 }
 
 .outline {
-  color: $primary-color;
-  border-color: currentColor;
-  &:hover {
-    background-color: rgba(254, 44, 85, 0.06);
-  }
+    color: $primary-color;
+    border-color: currentColor;
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
 }
