@@ -3,8 +3,8 @@ import Tippy from "@tippyjs/react";
 
 import Popper from "components/common/Popper";
 import SearchResult from "../SearchResult";
-import { HanldeUseDebound } from "utils";
 
+import { useDebouned } from "hooks";
 import { CloseIcon, SearchIcon, LoadingIcon } from "components/Icons";
 import styles from "./Search.module.scss";
 
@@ -17,6 +17,8 @@ function Search() {
   const wrapInputRef = useRef<any>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const debounedInput = useDebouned(valueInput, 500);
+
   const callApi = async (value: any) => {
     setIsLoading(true);
     const result = await new Promise((resolve, reject) => {
@@ -27,8 +29,6 @@ function Search() {
     setSearchResult(result);
     setIsLoading(false);
   };
-
-  const debounced = HanldeUseDebound(callApi, 500);
 
   const handleFocusInput = () => {
     wrapInputRef.current.classList.add(styles.focused);
@@ -45,16 +45,20 @@ function Search() {
   const handleClearInput = () => {
     inputRef.current?.focus();
     setValueInput("");
-    setIsShowResult(false);
     setSearchResult([]);
   };
 
   useEffect(() => {
-    if (valueInput) {
-      debounced(valueInput);
+    if (!valueInput) {
+      setSearchResult([]);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [valueInput]);
+
+  useEffect(() => {
+    if (debounedInput) {
+      callApi(debounedInput);
+    }
+  }, [debounedInput]);
 
   return (
     <div className={styles["header-form-search"]} ref={wrapInputRef}>
