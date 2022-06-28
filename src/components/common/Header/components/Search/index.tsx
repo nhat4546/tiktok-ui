@@ -5,7 +5,7 @@ import Popper from "components/common/Popper";
 import SearchResult from "../SearchResult";
 
 import { useDebouned } from "hooks";
-import * as searchService from "service/searchService";
+import * as searchService from "services/searchService";
 import { CloseIcon, SearchIcon, LoadingIcon } from "components/Icons";
 import styles from "./Search.module.scss";
 

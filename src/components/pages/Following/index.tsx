@@ -1,4 +1,4 @@
-import { DefaultLayout } from "components/layouts";
+import { DefaultLayout } from "layouts";
 import React from "react";
 
 function Following() {
