@@ -96,7 +96,7 @@ const SearchIcon = ({ className }: any) => (
     width="24"
     height="24"
     viewBox="0 0 48 48"
-    fill="rgba(22, 24, 35, 0.75)"
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >

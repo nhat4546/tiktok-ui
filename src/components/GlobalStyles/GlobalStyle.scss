@@ -1,40 +1,64 @@
-// @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap");
+@import "components/GlobalStyles/mixin.scss";
+@import "components/GlobalStyles/variables.scss";
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
+@font-face {
+    font-family: ProximaNova;
+    src: url("/assets/fonts/Proxima-Nova-Regular.woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url("/assets/fonts/ProximaNova-Semibold.woff2");
+    font-weight: 600;
+}
+
+// @font-face {
+//     font-family: ProximaNova;
+//     src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+//     font-weight: 700;
+// }
+
+// @font-face {
+//     font-family: SofiaPro;
+//     src: url('/assets/fonts/sofiapro-bold.woff');
+//     font-weight: 700;
+// }
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC,
-    sans-serif;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  text-rendering: optimizeSpeed;
+    padding: 0;
+    margin: 0;
+    font-family: $font-family;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    text-rendering: optimizeSpeed;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
 
 button,
 input {
-  outline: none;
-  border: none;
-  background: none;
+    outline: none;
+    border: none;
+    background: none;
 }
 
 h1,
@@ -42,24 +66,26 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0;
+    margin: 0;
 }
 
 .global-line-sprate {
-  width: 100%;
-  height: 1px;
-  background: rgba(22, 24, 35, 0.12);
+    width: 100%;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
 }
 
 @keyframes loading-icon {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .global-loading-icon {
-  animation: loading-icon 0.75s infinite linear;
+    width: 13px;
+    height: 13px;
+    animation: loading-icon 0.75s infinite linear;
 }
