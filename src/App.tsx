@@ -4,18 +4,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Button } from "components/common";
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          {privateRoutes.map((route, index) => {
-            const Page = route.element;
-            return <Route key={index} path={route.path} element={<Page />} />;
-          })}
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Routes>
+                    {privateRoutes.map((route, index) => {
+                        const Page = route.element;
+                        return <Route key={index} path={route.path} element={<Page />} />;
+                    })}
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
